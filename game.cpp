@@ -7,9 +7,15 @@ int getBallCount(std::string guess, std::string answer);
 std::string startingGame() {
     srand(time(NULL));
     std::string ans = "";
+    int usedTokens[] = { 0,0,0,0,0,0,0,0,0,0 };
 
-    for (int i = 0; i < 3; ++i) {
-        ans.append(std::to_string(rand() % 10));
+    for (int i = 0; i < 3;) {
+        int token = rand() % 10;
+        if (usedTokens[token] == 0) {
+            ans.append(std::to_string(token));
+            usedTokens[token] = 1;
+            ++i;
+        }
     }
 
     return ans;
