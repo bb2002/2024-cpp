@@ -24,8 +24,9 @@ std::string startingGame() {
 void play(std::string answer) {
     std::string guess;
 
-    for(;;) {
+    for(int i = 0; i < 5; ++i) {
         int strike = 0, ball = 0;
+        std::cout << 5 - i << " chances left." << std::endl; 
         std::cout << "Enter a guess: ";
         std::cin >> guess;
 
@@ -36,9 +37,11 @@ void play(std::string answer) {
 
         if (guess == answer) {
             std::cout << "You win!" << std::endl;
-            break;
+            return;
         }
 
         std::cout << "Strikes: " << getStrikeCount(guess, answer) << ", Balls: " << getBallCount(guess, answer) << std::endl;
     }
+
+    std::cout << "You lose." << std::endl;
 }
