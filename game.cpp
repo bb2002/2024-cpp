@@ -3,14 +3,14 @@
 
 int getStrikeCount(std::string guess, std::string answer);
 int getBallCount(std::string guess, std::string answer);
+int getRandomToken();
 
 std::string startingGame() {
-    srand(time(NULL));
     std::string ans = "";
     int usedTokens[] = { 0,0,0,0,0,0,0,0,0,0 };
 
     for (int i = 0; i < 3;) {
-        int token = rand() % 10;
+        int token = getRandomToken();
         if (usedTokens[token] == 0) {
             ans.append(std::to_string(token));
             usedTokens[token] = 1;

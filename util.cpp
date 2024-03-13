@@ -23,3 +23,8 @@ int getBallCount(std::string guess, std::string answer) {
 
     return ball;
 }
+
+int getRandomToken() {
+    srand(time(NULL));
+    return rand() % 10;
+}
