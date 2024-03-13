@@ -6,6 +6,8 @@ void play(std::string);
 
 int main() {
     std::string answer = startingGame();
+    std::cout << "Answer is: " << answer << std::endl;
+
     if (answer.length() != 3) {
         // 유저가 입력을 잘못한 경우
         std::cout << "Input.length() != 3" << std::endl;

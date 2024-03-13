@@ -5,9 +5,13 @@ int getStrikeCount(std::string guess, std::string answer);
 int getBallCount(std::string guess, std::string answer);
 
 std::string startingGame() {
+    srand(time(NULL));
     std::string ans;
-    std::cout << "Enter a answer: ";
-    std::cin >> ans;
+
+    for (int i = 0; i < 3; ++i) {
+        ans.append(std::to_string(rand() % 10));
+    }
+
     return ans;
 }
 
