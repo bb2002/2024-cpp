@@ -15,7 +15,7 @@ int getBallCount(std::string guess, std::string answer) {
     int ball = 0;
     for (int i = 0; i < guess.length(); ++i) {
         for (int j = 0; j < answer.length(); ++j) {
-            if (guess[i] == answer[j]) {
+            if (guess[i] == answer[j] && i != j) {
                 ++ball;
             }
         }
